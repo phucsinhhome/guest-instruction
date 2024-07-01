@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Gallery</title>
+    <style>
+        .image-container {
+            display: flex;
+            overflow-x: scroll;
+        }
+        .image {
+            margin-right: 10px;
+        }
+        .arrow {
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Image Gallery</h1>
+    <div class="image-container">
+        <span class="arrow" onclick="showPreviousImage()">←</span>
+        <img class="image" src="https://phucsinhhcm.hopto.org:9000/openresources/gofarmstay/menu_for_foreigner_guest.png" alt="Image 1">
+        <img class="image" src="https://phucsinhhcm.hopto.org:9000/openresources/gofarmstay/menu_for_foreigner_guest.png" alt="Image 2">
+        <img class="image" src="https://phucsinhhcm.hopto.org:9000/openresources/gofarmstay/menu_for_foreigner_guest.png" alt="Image 3">
+        <span class="arrow" onclick="showNextImage()">→</span>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.image');
+
+        function showPreviousImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage();
+        }
+
+        function showNextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage();
+        }
+
+        function updateImage() {
+            images.forEach((img, index) => {
+                img.style.display = index === currentIndex ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
