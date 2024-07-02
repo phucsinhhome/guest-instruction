@@ -1,48 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Phuc Sinh Guest</title>
-    <style>
-        .image-container {
-            display: flex;
-            overflow-x: scroll;
-        }
-        .image {
-            margin-right: 10px;
-        }
-        .arrow {
-            font-size: 24px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <div class="image-container">
-        <span class="arrow" onclick="showPreviousImage()">←</span>
-        <img class="image" src="https://phucsinhhcm.hopto.org:9000/openresources/gofarmstay/menu_for_foreigner_guest.png" alt="Food Menu">
-        <img class="image" src="https://phucsinhhcm.hopto.org:9000/openresources/gofarmstay/phucsinh_baverage_menu.jpg" alt="Baverage Menu">
-        <span class="arrow" onclick="showNextImage()">→</span>
-    </div>
-
-    <script>
-        let currentIndex = 0;
-        const images = document.querySelectorAll('.image');
-
-        function showPreviousImage() {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            updateImage();
-        }
-
-        function showNextImage() {
-            currentIndex = (currentIndex + 1) % images.length;
-            updateImage();
-        }
-
-        function updateImage() {
-            images.forEach((img, index) => {
-                img.style.display = index === currentIndex ? 'block' : 'none';
-            });
-        }
-    </script>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
