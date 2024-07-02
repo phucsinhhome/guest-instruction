@@ -1,29 +1,33 @@
 import { useState } from 'react'
+import reactLogo from '../assets/react.svg'
 
 export const ImagesViewer = () => {
     const [count, setCount] = useState(0)
 
     const images = [{
         id: 1,
-        url: "https://images.pexels.com/photos/158063/bellingrath-gardens-alabama-landscape-scenic-158063.jpeg"
+        url: { reactLogo }
     }]
 
     return (
         <>
             <div id="indicators-carousel" className="relative w-full" data-carousel="static">
                 <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
-                    {images.map(image => {
+                    {/* {images.map(image => {
                         return (
                             <div key={image.id} className="hidden duration-700 ease-in-out" data-carousel-item="active">
                                 <img src={image.url} className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
                             </div>
                         )
-                    })}
+                    })} */}
+                    <div className="hidden duration-700 ease-in-out" data-carousel-item="active">
+                        <img src="" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+                    </div>
                 </div>
                 <div className="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
                     {
                         images.map((image, i) => {
-                            return (<button type="button" className="w-3 h-3 rounded-full" aria-current="true" aria-label={i} data-carousel-slide-to={i}/>)
+                            return (<button type="button" className="w-3 h-3 rounded-full" aria-current="true" aria-label={i} data-carousel-slide-to={i} />)
                         })
                     }
                 </div>
