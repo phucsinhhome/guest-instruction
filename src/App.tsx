@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import { ImagesViewer } from './Component/ImagesViewer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -8,7 +9,7 @@ function App() {
   return (
     <>
       <div>
-        <img src={menuURL} alt="Food Menu" />
+        <ImagesViewer/>
       </div>
     </>
   )
