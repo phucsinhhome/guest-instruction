@@ -2,11 +2,13 @@ import './App.css'
 import { ImagesViewer } from './Component/ImagesViewer'
 
 function App() {
- 
+
   return (
-    <>
-      <ImagesViewer/>
-    </>
+    <div className="h-screen">
+      
+      <ImagesViewer />
+    </div>
+
   )
 }
 
