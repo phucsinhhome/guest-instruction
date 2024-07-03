@@ -7,15 +7,16 @@ export const ImagesViewer = () => {
     const instructionServiceEndpoint = import.meta.env.VITE_INSTRUCTION_SERVICE_ENDPOINT
     const items = [
         {
-            url: "/openresources/gofarmstay/menu_for_foreigner_guest.png",
+            url: `${instructionServiceEndpoint + "/openresources/gofarmstay/menu_for_foreigner_guest.png"}`,
+            //url: "https://iso.500px.com/wp-content/uploads/2014/07/big-one.jpg",
             note: "The main dishes will be prepared together with rice and vegetables included"
         },
         {
-            url: "/openresources/gofarmstay/phucsinh_baverage_menu.jpg",
+            url: `${instructionServiceEndpoint + "/openresources/gofarmstay/phucsinh_baverage_menu.jpg"}`,
             note: "Please find the drink from the fridge or talk to us directly"
         },
         {
-            url: "/openresources/gofarmstay/mekong_boat_tour.png",
+            url: `${instructionServiceEndpoint + "/openresources/gofarmstay/mekong_boat_tour.png"}`,
             note: "We also organize the private boat excursion on the Mekong river. Please let me know so we will organize it for you."
         }
     ]
@@ -31,8 +32,8 @@ export const ImagesViewer = () => {
         <div className="h-full w-auto">
             <span>{items[currentSlideNum].note}</span>
             <Carousel slide={false} onSlideChange={onSlideChange}>
-                {items.map((im,i)=>{
-                    return(<img key={i} src={instructionServiceEndpoint + im.url}></img>)
+                {items.map((im, i) => {
+                    return (<img key={i} src={im.url}></img>)
                 })}
             </Carousel>
         </div>
