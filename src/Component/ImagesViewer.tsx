@@ -29,9 +29,9 @@ export const ImagesViewer = () => {
     }
 
     return (
-        <div className="h-full w-auto">
-            <span>{items[currentSlideNum].note}</span>
-            <Carousel slide={false} onSlideChange={onSlideChange}>
+        <div className="h-5/6 md:h-10/12 w-1/4 sm:w-10/12 md:w-full">   
+            {/* <span>{items[currentSlideNum].note}</span> */}
+            <Carousel slide={false} onSlideChange={onSlideChange} className="h-full w-full">
                 {items.map((im, i) => {
                     return (<img key={i} src={im.url}></img>)
                 })}
